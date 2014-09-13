@@ -91,15 +91,17 @@ public class CalculatorApp {
         while (!operationListed) {
             for (int i = 0; i < posOperations.size(); i++) {
                 opListed = posOperations.get(i);
-                if (checkOperation.contains(opListed)) {
+                if (checkOperation.equalsIgnoreCase(opListed)) {
                     selection = i + 1;
                     operationListed = true;
+                } else {
+                    System.out.println("Selection not found. Please try again.");
                 }
+
             }
-            System.out.println("Selection not found. Please try again.");
+            System.out.println("You have chosen to " + posOperations.get(selection - 1).toString());
+            return selection;
         }
-        System.out.println("You have chosen to " + posOperations.get(selection-1).toString());
-        return selection;
     }
 
     /**
