@@ -21,7 +21,7 @@ public class CalculatorApp {
         Scanner userInput;
 
         welcome = "Welcome to the AutoCalc 3000 Bfinity Edition.";
-        requestForOperation = "Please select your requested operation by typing the choice in below.";
+
         options = "Add, Subtract, Multiply, Divide, Square Root";
         requestForDigits = "Please enter digits you are calculating. (You must enter at least one)";
 
@@ -64,16 +64,26 @@ public class CalculatorApp {
         return selection;
     }
 
-    public double checkUserDigits (Scanner digitsToCheck)
+    public double checkUserDigits (double digitsToCheck)
     {
-
+        Scanner numbersIn;
+        String requestForOperation;
+        double numberToCompute;
         boolean numberOkay;
         numberOkay = false;
+        requestForOperation = "Please select your requested operation by typing the choice in below.";
+
+
+
+
 
         while(numberOkay)
         {
-            if(digitsToCheck.hasNextDouble())
+            System.out.println(requestForOperation);
+
+            if(digitsToCheck())
             {
+                numberToCompute = digitsToCheck;
 
             }
 
