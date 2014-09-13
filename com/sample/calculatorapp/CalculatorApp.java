@@ -48,7 +48,10 @@ public class CalculatorApp {
 
         while(operationListed)
         {
-            
+            for(int i = 0; i < posOperations.size(); i++)
+            {
+                
+            }
 
 
         }
