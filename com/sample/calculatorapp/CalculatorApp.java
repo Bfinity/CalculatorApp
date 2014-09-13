@@ -49,7 +49,27 @@ public class CalculatorApp {
             {
                 firstNumber = CalculatorApp.checkUserDigits();
             }
-            calcAnswer = CalculatorApp.calculationMaster(selectionHolder, firstNumber, secondNumber);
+
+            switch(selectionHolder)
+            {
+                case 1:
+                    calcAnswer = firstNumber + secondNumber;
+
+                case 2:
+                    calcAnswer = firstNumber - secondNumber;
+
+                case 3:
+                    calcAnswer = firstNumber * secondNumber;
+
+                case 4:
+                    calcAnswer = firstNumber / secondNumber;
+
+                case 5:
+                    calcAnswer = Math.sqrt(firstNumber);
+
+                default:
+                    System.out.println("Ooops. There appears to be a computation error. Please contact someone. Anyone. Hurry!");
+
             System.out.println(yourAnswer + calcAnswer);
             System.out.println(goAgain);
 
