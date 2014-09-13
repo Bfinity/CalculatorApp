@@ -28,14 +28,14 @@ public class CalculatorApp {
     }
 
 
-    public String checkUserRequest (String inputToCheck)
+    public boolean checkUserRequest (String inputToCheck)
     {
 
     }
 
-    public String checkUserDigits (int digitsToCheck)
+    public boolean checkUserDigits (int digitsToCheck)
     {
-        
+
     }
 }
 
