@@ -64,13 +64,20 @@ public class CalculatorApp {
         return selection;
     }
 
-    public double checkUserDigits (double digitsToCheck)
+    public double checkUserDigits (Scanner digitsToCheck)
     {
-        double numberToCheck;
-        boolean numberOkay;
 
-        numberToCheck = digitsToCheck;
+        boolean numberOkay;
         numberOkay = false;
+
+        while(numberOkay)
+        {
+            if(digitsToCheck.hasNextDouble())
+            {
+
+            }
+
+        }
 
 
     }
