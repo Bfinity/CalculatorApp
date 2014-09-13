@@ -40,6 +40,7 @@ public class CalculatorApp {
         posOperations.add("subtract");
         posOperations.add("multiply");
         posOperations.add("divide");
+        posOperations.add("square root");
 
 
 
