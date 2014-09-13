@@ -34,15 +34,24 @@ public class CalculatorApp {
     {
         ArrayList<String> posOperations;
         boolean operationListed;
+        String checkOperation;
 
         posOperations = new ArrayList<String>();
         operationListed = false;
+        checkOperation = inputToCheck;
 
         posOperations.add("add");
         posOperations.add("subtract");
         posOperations.add("multiply");
         posOperations.add("divide");
         posOperations.add("square root");
+
+        while(operationListed)
+        {
+            
+
+
+        }
 
 
 
