@@ -64,7 +64,7 @@ public class CalculatorApp {
         return selection;
     }
 
-    public boolean checkUserDigits (int digitsToCheck)
+    public int checkUserDigits (int digitsToCheck)
     {
 
     }
