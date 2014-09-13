@@ -64,26 +64,25 @@ public class CalculatorApp {
         return selection;
     }
 
-    public double checkUserDigits (double digitsToCheck)
+    public double checkUserDigits ()
     {
         Scanner numbersIn;
         String requestForOperation;
         double numberToCompute;
         boolean numberOkay;
         numberOkay = false;
+        numbersIn = new Scanner(System.in);
         requestForOperation = "Please select your requested operation by typing the choice in below.";
 
 
-
-
-
-        while(numberOkay)
+        while(!numberOkay)
         {
             System.out.println(requestForOperation);
 
-            if(digitsToCheck())
+            if(numbersIn.hasNextDouble())
             {
-                numberToCompute = digitsToCheck;
+                numberToCompute = numbersIn.nextDouble();
+                numberOkay = true;
 
             }
 
