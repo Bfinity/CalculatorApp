@@ -4,6 +4,8 @@ package com.sample.calculatorapp;
  * Created by BFineRocks on 9/12/14.
  */
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 /**
  * This Calculator App will take in user input and perform the requested operations.
@@ -20,7 +22,7 @@ public class CalculatorApp {
 
         welcome = "Welcome to the AutoCalc 3000 Bfinity Edition.";
         requestForOperation = "Please select your requested operation by typing the choice in below.";
-        options = "Addition, Subtraction, Multiplication, Division, Square Root";
+        options = "Add, Subtract, Multiply, Divide, Square Root";
         requestForDigits = "Please enter digits you are calculating. (You must enter at least one)";
 
 
@@ -30,6 +32,16 @@ public class CalculatorApp {
 
     public boolean checkUserRequest (String inputToCheck)
     {
+        ArrayList<String> posOperations;
+
+        posOperations = new ArrayList<String>();
+
+        posOperations.add("add");
+        posOperations.add("subtract");
+        posOperations.add("multiply");
+        posOperations.add("divide");
+
+
 
     }
 
