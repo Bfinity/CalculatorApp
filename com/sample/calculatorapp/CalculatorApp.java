@@ -18,7 +18,7 @@ import java.util.ArrayList;
 //Calculator Main Method. This runs the calculator program. It operates on a loop, until the user exits the program.
 public class CalculatorApp {
     static public void main(String[] args) {
-        String welcome, requestForOperation, operationEntered;
+        String welcome, requestForOperation, operationEntered, yourAnswer, goAgain;
         double calcAnswer, firstNumber, secondNumber;
         int selectionHolder;
         boolean stillWorking;
@@ -27,8 +27,11 @@ public class CalculatorApp {
         welcome = "Welcome to the AutoCalc 3000 Bfinity Edition.";
         requestForOperation = "Please select your requested operation by typing the choice in below. \n " +
                 "Add, Subtract, Multiply, Divide, Square Root";
+        yourAnswer = "The answer to the calculation is: ";
+        goAgain = "Do you have more calculations for me?";
         userInput = new Scanner(System.in);
         stillWorking = true;
+        calcAnswer = 0;
         firstNumber = 0;
         secondNumber = 0;
 
@@ -47,8 +50,9 @@ public class CalculatorApp {
             {
                 firstNumber = CalculatorApp.checkUserDigits();
             }
+            calcAnswer = CalculatorApp.calculationMaster(selectionHolder, firstNumber, secondNumber);
 
-            
+
 
 
         }
