@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class CalculatorApp {
     static public void main(String[] args) {
         String welcome, requestForOperation, operationEntered;
-        double calcAnswer;
+        double calcAnswer, firstNumber, secondNumber;
         int selectionHolder;
         boolean stillWorking;
         Scanner userInput;
@@ -29,13 +29,27 @@ public class CalculatorApp {
                 "Add, Subtract, Multiply, Divide, Square Root";
         userInput = new Scanner(System.in);
         stillWorking = true;
+        firstNumber = 0;
+        secondNumber = 0;
 
         System.out.println(welcome);
 
         while(stillWorking){
             System.out.println(requestForOperation);
             operationEntered = userInput.nextLine();
-            CalculatorApp.checkUserRequest(operationEntered);
+            selectionHolder = CalculatorApp.checkUserRequest(operationEntered);
+
+            if (selectionHolder < 5) {
+                firstNumber = CalculatorApp.checkUserDigits();
+                secondNumber = CalculatorApp.checkUserDigits();
+            }
+            else
+            {
+                firstNumber = CalculatorApp.checkUserDigits();
+            }
+
+            
+
 
         }
 

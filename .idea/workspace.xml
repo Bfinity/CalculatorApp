@@ -36,8 +36,8 @@
       <file leaf-file-name="CalculatorApp.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/sample/calculatorapp/CalculatorApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4458873" vertical-offset="165" max-vertical-offset="2550">
-              <caret line="124" column="17" selection-start-line="124" selection-start-column="17" selection-end-line="124" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.6926407" vertical-offset="270" max-vertical-offset="2760">
+              <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -369,8 +369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/sample/calculatorapp/CalculatorApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4458873" vertical-offset="165" max-vertical-offset="2550">
-          <caret line="124" column="17" selection-start-line="124" selection-start-column="17" selection-end-line="124" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.6926407" vertical-offset="270" max-vertical-offset="2760">
+          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
