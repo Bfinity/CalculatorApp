@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 
 public class CalculatorApp {
-    static public void main(String[] args){
+    static public void main(String[] args) {
         String add, subtract, multiply, divide, welcome, requestForOperation, options;
         Scanner userInput;
 
@@ -25,13 +25,10 @@ public class CalculatorApp {
         options = "Add, Subtract, Multiply, Divide, Square Root";
 
 
-
-
     }
 
 
-    public int checkUserRequest (String inputToCheck)
-    {
+    public int checkUserRequest(String inputToCheck) {
         ArrayList<String> posOperations;
         boolean operationListed;
         String checkOperation, opListed;
@@ -48,13 +45,10 @@ public class CalculatorApp {
         posOperations.add("divide");
         posOperations.add("square root");
 
-        while(!operationListed)
-        {
-            for(int i = 0; i < posOperations.size(); i++)
-            {
+        while (!operationListed) {
+            for (int i = 0; i < posOperations.size(); i++) {
                 opListed = posOperations.get(i);
-                if(checkOperation.contains(opListed))
-                {
+                if (checkOperation.contains(opListed)) {
                     selection = i + 1;
                     operationListed = true;
                 }
@@ -64,30 +58,29 @@ public class CalculatorApp {
         return selection;
     }
 
-    public double checkUserDigits ()
-    {
+    public double checkUserDigits() {
         Scanner numbersIn;
         String requestForDigits;
         double numberToCompute;
-        boolean numberOkay;
+        int numberOfNumbersEntered;
 
-        numberOkay = false;
+        numberOfNumbersEntered = 0;
         numbersIn = new Scanner(System.in);
+        numberToCompute = 0;
 
-        requestForDigits = "Please enter digits you are calculating. (You must enter at least one)";
-        while(!numberOkay)
-        {
-            System.out.println(requestForOperation);
-            if(numbersIn.hasNextDouble())
-            {
+        requestForDigits = "Please enter digits you are calculating. You must enter at least one. Enter q when finished.";
+        while (numberOfNumbersEntered <= 2) {
+            System.out.println(requestForDigits);
+            if (numbersIn.hasNextDouble()) {
                 numberToCompute = numbersIn.nextDouble();
-                numberOkay = true;
+                numberOfNumbersEntered++;
             }
 
         }
-
+        return numberToCompute;
 
     }
+
 }
 
 
