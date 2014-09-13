@@ -15,6 +15,7 @@ import java.util.ArrayList;
  * the app will begin again. If not, it will stop. It will include error handling for bad input using a method.
  */
 
+//Calculator Main Method. This runs the program.
 public class CalculatorApp {
     static public void main(String[] args) {
         String add, subtract, multiply, divide, welcome, requestForOperation, options;
@@ -27,6 +28,13 @@ public class CalculatorApp {
 
     }
 
+/**
+ * This method checks if the user inputted an operation that the calculator can complete. It uses an arraylist that
+ * lists all the possible operations, then using a for loop and contains method checks the operation entered. This
+ * returns an int representation of the selection if found. If not found it loops to request a new entry.
+ * @param inputToCheck
+ * @return
+ */
 
     public int checkUserRequest(String inputToCheck) {
         ArrayList<String> posOperations;
@@ -58,6 +66,13 @@ public class CalculatorApp {
         return selection;
     }
 
+    /**
+     * This method checks if the user entered doubles that can be calculated. It uses a Scanner and the hasNextDouble
+     * method. If a double is not entered it requests a new entry in a loop. It returns the double.
+     * @return
+     */
+
+
     public double checkUserDigits() {
         Scanner numbersIn;
         String requestForDigits;
@@ -82,6 +97,14 @@ public class CalculatorApp {
         }
         return numberToCompute;
     }
+
+    /**
+     * This method completes the calculation selected. It uses a switch and defaults if a calculation can not be completed.
+     * @param selection
+     * @param firstEntry
+     * @param secondEntry
+     * @return
+     */
 
     public double calculationMaster (int selection, double firstEntry, double secondEntry)
     {
