@@ -68,16 +68,19 @@ public class CalculatorApp {
         numbersIn = new Scanner(System.in);
         numberToCompute = 0;
 
-        requestForDigits = "Please enter digits you are calculating. You must enter at least one. Enter q when finished.";
+        requestForDigits = "Please enter digit you are calculating.";
         while (!numberOkay) {
             System.out.println(requestForDigits);
             if (numbersIn.hasNextDouble()) {
                 numberToCompute = numbersIn.nextDouble();
                 numberOkay = true;
             }
+            else
+            {
+                System.out.println("You did not enter a number. Please try again.");
+            }
         }
         return numberToCompute;
-
     }
 
 }
