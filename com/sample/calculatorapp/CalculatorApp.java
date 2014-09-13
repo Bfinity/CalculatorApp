@@ -62,20 +62,19 @@ public class CalculatorApp {
         Scanner numbersIn;
         String requestForDigits;
         double numberToCompute;
-        int numberOfNumbersEntered;
+        boolean numberOkay;
 
-        numberOfNumbersEntered = 0;
+        numberOkay = false;
         numbersIn = new Scanner(System.in);
         numberToCompute = 0;
 
         requestForDigits = "Please enter digits you are calculating. You must enter at least one. Enter q when finished.";
-        while (numberOfNumbersEntered <= 2) {
+        while (!numberOkay) {
             System.out.println(requestForDigits);
             if (numbersIn.hasNextDouble()) {
                 numberToCompute = numbersIn.nextDouble();
-                numberOfNumbersEntered++;
+                numberOkay = true;
             }
-
         }
         return numberToCompute;
 
