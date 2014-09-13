@@ -54,7 +54,7 @@ public class CalculatorApp {
             System.out.println(yourAnswer + calcAnswer);
             System.out.println(goAgain);
 
-            if(!userInput.nextLine().contains("y"))
+            if(!userInput.nextLine().contains("y") || !userInput.nextLine().contains("Y"))
             {
                 stillWorking = false;
             }
