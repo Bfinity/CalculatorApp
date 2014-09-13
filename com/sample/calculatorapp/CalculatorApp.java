@@ -17,13 +17,13 @@ import java.util.ArrayList;
 
 public class CalculatorApp {
     static public void main(String[] args){
-        String add, subtract, multiply, divide, welcome, requestForOperation, options, requestForDigits;
+        String add, subtract, multiply, divide, welcome, requestForOperation, options;
         Scanner userInput;
 
         welcome = "Welcome to the AutoCalc 3000 Bfinity Edition.";
-
+        requestForOperation = "Please select your requested operation by typing the choice in below.";
         options = "Add, Subtract, Multiply, Divide, Square Root";
-        requestForDigits = "Please enter digits you are calculating. (You must enter at least one)";
+
 
 
 
@@ -67,23 +67,21 @@ public class CalculatorApp {
     public double checkUserDigits ()
     {
         Scanner numbersIn;
-        String requestForOperation;
+        String requestForDigits;
         double numberToCompute;
         boolean numberOkay;
+
         numberOkay = false;
         numbersIn = new Scanner(System.in);
-        requestForOperation = "Please select your requested operation by typing the choice in below.";
 
-
+        requestForDigits = "Please enter digits you are calculating. (You must enter at least one)";
         while(!numberOkay)
         {
             System.out.println(requestForOperation);
-
             if(numbersIn.hasNextDouble())
             {
                 numberToCompute = numbersIn.nextDouble();
                 numberOkay = true;
-
             }
 
         }
