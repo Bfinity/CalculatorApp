@@ -33,6 +33,7 @@ public class CalculatorApp {
         stillWorking = true;
         secondNumber = 0;
 
+
         System.out.println(welcome);
 
         while(stillWorking){
@@ -50,25 +51,7 @@ public class CalculatorApp {
                 firstNumber = CalculatorApp.checkUserDigits();
             }
 
-            switch(selectionHolder)
-            {
-                case 1:
-                    calcAnswer = firstNumber + secondNumber;
-
-                case 2:
-                    calcAnswer = firstNumber - secondNumber;
-
-                case 3:
-                    calcAnswer = firstNumber * secondNumber;
-
-                case 4:
-                    calcAnswer = firstNumber / secondNumber;
-
-                case 5:
-                    calcAnswer = Math.sqrt(firstNumber);
-
-                default:
-                    System.out.println("Ooops. There appears to be a computation error. Please contact someone. Anyone. Hurry!");
+            calcAnswer = CalculatorApp.calculationMaster(selectionHolder, firstNumber, secondNumber);
 
             System.out.println(yourAnswer + calcAnswer);
             System.out.println(goAgain);
@@ -184,21 +167,27 @@ public class CalculatorApp {
         {
             case 1:
                 answer = firstEntry + secondEntry;
+                break;
 
             case 2:
                 answer = firstEntry - secondEntry;
+                break;
 
             case 3:
                 answer = firstEntry * secondEntry;
+                break;
 
             case 4:
                 answer = firstEntry / secondEntry;
+                break;
 
             case 5:
                 answer = Math.sqrt(firstEntry);
+                break;
 
             default:
                 System.out.println("Ooops. There appears to be a computation error. Please contact someone. Anyone. Hurry!");
+                break;
         }
         return answer;
 
