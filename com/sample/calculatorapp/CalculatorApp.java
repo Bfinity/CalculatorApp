@@ -28,7 +28,7 @@ public class CalculatorApp {
         requestForOperation = "Please select your requested operation by typing the choice in below. \n " +
                 "Add, Subtract, Multiply, Divide, Square Root";
         yourAnswer = "The answer to the calculation is: ";
-        goAgain = "Do you have more calculations for me?";
+        goAgain = "Do you have more calculations for me? Please enter Y for yes or N for no.";
         userInput = new Scanner(System.in);
         stillWorking = true;
         calcAnswer = 0;
@@ -51,10 +51,13 @@ public class CalculatorApp {
                 firstNumber = CalculatorApp.checkUserDigits();
             }
             calcAnswer = CalculatorApp.calculationMaster(selectionHolder, firstNumber, secondNumber);
+            System.out.println(yourAnswer + calcAnswer);
+            System.out.println(goAgain);
 
-
-
-
+            if(!userInput.nextLine().contains("y"))
+            {
+                stillWorking = false;
+            }
         }
 
 
