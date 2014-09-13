@@ -66,6 +66,12 @@ public class CalculatorApp {
 
     public double checkUserDigits (double digitsToCheck)
     {
+        double numberToCheck;
+        boolean numberOkay;
+
+        numberToCheck = digitsToCheck;
+        numberOkay = false;
+
 
     }
 }
