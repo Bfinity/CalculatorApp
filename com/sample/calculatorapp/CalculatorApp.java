@@ -21,11 +21,17 @@ public class CalculatorApp {
         String welcome, requestForOperation, options, operationEntered;
         double calcAnswer;
         int selectionHolder;
+        boolean stillWorking;
         Scanner userInput;
 
         welcome = "Welcome to the AutoCalc 3000 Bfinity Edition.";
         requestForOperation = "Please select your requested operation by typing the choice in below.";
         options = "Add, Subtract, Multiply, Divide, Square Root";
+        stillWorking = true;
+
+        while(stillWorking){
+            
+        }
 
 
     }
