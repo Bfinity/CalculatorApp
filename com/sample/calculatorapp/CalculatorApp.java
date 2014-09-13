@@ -83,6 +83,35 @@ public class CalculatorApp {
         return numberToCompute;
     }
 
+    public double calculationMaster (int selection, double firstEntry, double secondEntry)
+    {
+        double answer;
+        answer = 0;
+
+        switch(selection){
+            case 1:
+                answer = firstEntry + secondEntry;
+
+            case 2:
+                answer = firstEntry - secondEntry;
+
+            case 3:
+                answer = firstEntry * secondEntry;
+
+            case 4:
+                answer = firstEntry / secondEntry;
+
+            case 5:
+                answer = Math.sqrt(firstEntry);
+
+            default:
+                System.out.println("Ooops. There appears to be a computation error. Please contact someone. Anyone. Hurry!");
+        }
+        return answer;
+
+
+    }
+
 }
 
 
