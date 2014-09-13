@@ -23,14 +23,23 @@ public class CalculatorApp {
         options = "Addition, Subtraction, Multiplication, Division, Square Root";
         requestForDigits = "Please enter digits you are calculating. (You must enter at least one)";
 
-        
-
-
-
 
 
     }
+
+
+    public String checkUserRequest (String inputToCheck)
+    {
+
+    }
+
+    public String checkUserDigits (int digitsToCheck)
+    {
+        
+    }
 }
+
+
 
 
 
