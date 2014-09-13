@@ -48,7 +48,7 @@ public class CalculatorApp {
         posOperations.add("divide");
         posOperations.add("square root");
 
-        while(operationListed)
+        while(!operationListed)
         {
             for(int i = 0; i < posOperations.size(); i++)
             {
