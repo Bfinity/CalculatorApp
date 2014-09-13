@@ -58,17 +58,10 @@ public class CalculatorApp {
                     selection = i + 1;
                     operationListed = true;
                 }
-
-
             }
             System.out.println("Selection not found. Please try again.");
-
         }
-
-
-
-
-
+        return selection;
     }
 
     public boolean checkUserDigits (int digitsToCheck)
