@@ -18,7 +18,9 @@ import java.util.ArrayList;
 //Calculator Main Method. This runs the calculator program. It operates on a loop, until the user exits the program.
 public class CalculatorApp {
     static public void main(String[] args) {
-        String add, subtract, multiply, divide, welcome, requestForOperation, options;
+        String welcome, requestForOperation, options, operationEntered;
+        double calcAnswer;
+        int selectionHolder;
         Scanner userInput;
 
         welcome = "Welcome to the AutoCalc 3000 Bfinity Edition.";
@@ -32,8 +34,8 @@ public class CalculatorApp {
  * This method checks if the user inputted an operation that the calculator can complete. It uses an arraylist that
  * lists all the possible operations, then using a for loop and contains method checks the operation entered. This
  * returns an int representation of the selection if found. If not found it loops to request a new entry.
- * @param inputToCheck
- * @return
+ * @param inputToCheck a string from main method, requested operation
+ * @return int representation of operation
  */
 
     public int checkUserRequest(String inputToCheck) {
@@ -70,7 +72,7 @@ public class CalculatorApp {
     /**
      * This method checks if the user entered doubles that can be calculated. It uses a Scanner and the hasNextDouble
      * method. If a double is not entered it requests a new entry in a loop. It returns the double.
-     * @return
+     * @return double
      */
 
 
@@ -102,18 +104,18 @@ public class CalculatorApp {
 
     /**
      * This method completes the calculation selected. It uses a switch and defaults if a calculation can not be completed.
-     * @param selection
-     * @param firstEntry
-     * @param secondEntry
-     * @return
+     * @param opSelection the selected operation to complete.
+     * @param firstEntry the first double entered.
+     * @param secondEntry the second double entered (if entered).
+     * @return answer of calculation
      */
 
-    public double calculationMaster (int selection, double firstEntry, double secondEntry)
+    public double calculationMaster (int opSelection, double firstEntry, double secondEntry)
     {
         double answer;
         answer = 0;
 
-        switch(selection){
+        switch(opSelection){
             case 1:
                 answer = firstEntry + secondEntry;
 
