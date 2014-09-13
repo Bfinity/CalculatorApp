@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * the app will begin again. If not, it will stop. It will include error handling for bad input using a method.
  */
 
-//Calculator Main Method. This runs the program.
+//Calculator Main Method. This runs the calculator program. It operates on a loop, until the user exits the program.
 public class CalculatorApp {
     static public void main(String[] args) {
         String add, subtract, multiply, divide, welcome, requestForOperation, options;
@@ -63,6 +63,7 @@ public class CalculatorApp {
             }
             System.out.println("Selection not found. Please try again.");
         }
+        System.out.println("You have chosen to " + posOperations.get(selection-1).toString());
         return selection;
     }
 
@@ -95,6 +96,7 @@ public class CalculatorApp {
                 System.out.println("You did not enter a number. Please try again.");
             }
         }
+        System.out.println("Number Entered: " + numberToCompute);
         return numberToCompute;
     }
 
