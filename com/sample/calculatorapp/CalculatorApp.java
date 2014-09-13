@@ -58,12 +58,10 @@ public class CalculatorApp {
                     selection = i + 1;
                     operationListed = true;
                 }
-                else
-                {
-                    System.out.println("Selection not found. Please try again.");
-                }
-            }
 
+
+            }
+            System.out.println("Selection not found. Please try again.");
 
         }
 
