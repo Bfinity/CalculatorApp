@@ -18,19 +18,25 @@ import java.util.ArrayList;
 //Calculator Main Method. This runs the calculator program. It operates on a loop, until the user exits the program.
 public class CalculatorApp {
     static public void main(String[] args) {
-        String welcome, requestForOperation, options, operationEntered;
+        String welcome, requestForOperation, operationEntered;
         double calcAnswer;
         int selectionHolder;
         boolean stillWorking;
         Scanner userInput;
 
         welcome = "Welcome to the AutoCalc 3000 Bfinity Edition.";
-        requestForOperation = "Please select your requested operation by typing the choice in below.";
-        options = "Add, Subtract, Multiply, Divide, Square Root";
+        requestForOperation = "Please select your requested operation by typing the choice in below. \n " +
+                "Add, Subtract, Multiply, Divide, Square Root";
+        userInput = new Scanner(System.in);
         stillWorking = true;
 
+        System.out.println(welcome);
+
         while(stillWorking){
-            
+            System.out.println(requestForOperation);
+            operationEntered = userInput.nextLine();
+            CalculatorApp.checkUserRequest(operationEntered);
+
         }
 
 
@@ -44,7 +50,7 @@ public class CalculatorApp {
  * @return int representation of operation
  */
 
-    public int checkUserRequest(String inputToCheck) {
+    public static int checkUserRequest(String inputToCheck) {
         ArrayList<String> posOperations;
         boolean operationListed;
         String checkOperation, opListed;
@@ -82,7 +88,7 @@ public class CalculatorApp {
      */
 
 
-    public double checkUserDigits() {
+    public static double checkUserDigits() {
         Scanner numbersIn;
         String requestForDigits;
         double numberToCompute;
@@ -116,7 +122,7 @@ public class CalculatorApp {
      * @return answer of calculation
      */
 
-    public double calculationMaster (int opSelection, double firstEntry, double secondEntry)
+    public static double calculationMaster (int opSelection, double firstEntry, double secondEntry)
     {
         double answer;
         answer = 0;
