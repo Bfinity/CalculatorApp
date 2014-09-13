@@ -31,8 +31,6 @@ public class CalculatorApp {
         goAgain = "Do you have more calculations for me? Please enter Y for yes or N for no.";
         userInput = new Scanner(System.in);
         stillWorking = true;
-        calcAnswer = 0;
-        firstNumber = 0;
         secondNumber = 0;
 
         System.out.println(welcome);
@@ -42,7 +40,8 @@ public class CalculatorApp {
             operationEntered = userInput.nextLine();
             selectionHolder = CalculatorApp.checkUserRequest(operationEntered);
 
-            if (selectionHolder < 5) {
+            if (selectionHolder < 5)
+            {
                 firstNumber = CalculatorApp.checkUserDigits();
                 secondNumber = CalculatorApp.checkUserDigits();
             }
@@ -71,7 +70,8 @@ public class CalculatorApp {
  * @return int representation of operation
  */
 
-    public static int checkUserRequest(String inputToCheck) {
+    public static int checkUserRequest(String inputToCheck)
+    {
         ArrayList<String> posOperations;
         boolean operationListed;
         String checkOperation, opListed;
@@ -88,20 +88,27 @@ public class CalculatorApp {
         posOperations.add("divide");
         posOperations.add("square root");
 
-        while (!operationListed) {
-            for (int i = 0; i < posOperations.size(); i++) {
+        while (!operationListed)
+        {
+            for (int i = 0; i < posOperations.size(); i++)
+            {
                 opListed = posOperations.get(i);
-                if (checkOperation.equalsIgnoreCase(opListed)) {
+                if (checkOperation.equalsIgnoreCase(opListed))
+                {
                     selection = i + 1;
                     operationListed = true;
-                } else {
+                    i = 6;
+                }
+                else
+                {
                     System.out.println("Selection not found. Please try again.");
                 }
 
             }
             System.out.println("You have chosen to " + posOperations.get(selection - 1).toString());
-            return selection;
+
         }
+        return selection;
     }
 
     /**
@@ -111,7 +118,8 @@ public class CalculatorApp {
      */
 
 
-    public static double checkUserDigits() {
+    public static double checkUserDigits()
+    {
         Scanner numbersIn;
         String requestForDigits;
         double numberToCompute;
@@ -122,9 +130,11 @@ public class CalculatorApp {
         numberToCompute = 0;
 
         requestForDigits = "Please enter digit you are calculating.";
-        while (!numberOkay) {
+        while (!numberOkay)
+        {
             System.out.println(requestForDigits);
-            if (numbersIn.hasNextDouble()) {
+            if (numbersIn.hasNextDouble())
+            {
                 numberToCompute = numbersIn.nextDouble();
                 numberOkay = true;
             }
@@ -150,7 +160,8 @@ public class CalculatorApp {
         double answer;
         answer = 0;
 
-        switch(opSelection){
+        switch(opSelection)
+        {
             case 1:
                 answer = firstEntry + secondEntry;
 
