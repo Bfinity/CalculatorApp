@@ -33,14 +33,18 @@ public class CalculatorApp {
     public boolean checkUserRequest (String inputToCheck)
     {
         ArrayList<String> posOperations;
+        boolean operationListed;
 
         posOperations = new ArrayList<String>();
+        operationListed = false;
 
         posOperations.add("add");
         posOperations.add("subtract");
         posOperations.add("multiply");
         posOperations.add("divide");
         posOperations.add("square root");
+
+
 
 
 
