@@ -35,10 +35,12 @@ public class CalculatorApp {
         ArrayList<String> posOperations;
         boolean operationListed;
         String checkOperation, opListed;
+        int selection;
 
         posOperations = new ArrayList<String>();
         operationListed = false;
         checkOperation = inputToCheck;
+        selection = 0;
 
         posOperations.add("add");
         posOperations.add("subtract");
@@ -53,7 +55,12 @@ public class CalculatorApp {
                 opListed = posOperations.get(i);
                 if(checkOperation.contains(opListed))
                 {
-
+                    selection = i + 1;
+                    operationListed = true;
+                }
+                else
+                {
+                    System.out.println("Selection not found. Please try again.");
                 }
             }
 
