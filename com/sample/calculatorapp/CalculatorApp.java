@@ -34,7 +34,7 @@ public class CalculatorApp {
     {
         ArrayList<String> posOperations;
         boolean operationListed;
-        String checkOperation;
+        String checkOperation, opListed;
 
         posOperations = new ArrayList<String>();
         operationListed = false;
@@ -50,7 +50,11 @@ public class CalculatorApp {
         {
             for(int i = 0; i < posOperations.size(); i++)
             {
-                
+                opListed = posOperations.get(i);
+                if(opListed.contains(checkOperation))
+                {
+                    
+                }
             }
 
 
