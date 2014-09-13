@@ -30,7 +30,7 @@ public class CalculatorApp {
     }
 
 
-    public boolean checkUserRequest (String inputToCheck)
+    public int checkUserRequest (String inputToCheck)
     {
         ArrayList<String> posOperations;
         boolean operationListed;
@@ -51,9 +51,9 @@ public class CalculatorApp {
             for(int i = 0; i < posOperations.size(); i++)
             {
                 opListed = posOperations.get(i);
-                if(opListed.contains(checkOperation))
+                if(checkOperation.contains(opListed))
                 {
-                    
+
                 }
             }
 
