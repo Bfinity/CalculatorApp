@@ -25,8 +25,7 @@ public class CalculatorApp {
         Scanner userInput;
 
         welcome = "Welcome to the AutoCalc 3000 Bfinity Edition.";
-        requestForOperation = "Please select your requested operation by typing the choice in below. \n " +
-                "Add, Subtract, Multiply, Divide, Square Root";
+
         yourAnswer = "The answer to the calculation is: ";
         goAgain = "Do you have more calculations for me? Please enter Y for yes or N for no.";
         userInput = new Scanner(System.in);
@@ -60,6 +59,10 @@ public class CalculatorApp {
             {
                 stillWorking = false;
             }
+            else
+            {
+                stillWorking = true;
+            }
         }
 
 
@@ -69,22 +72,24 @@ public class CalculatorApp {
  * This method checks if the user inputted an operation that the calculator can complete. It uses an arraylist that
  * lists all the possible operations, then using a for loop and contains method checks the operation entered. This
  * returns an int representation of the selection if found. If not found it loops to request a new entry.
- * @param inputToCheck a string from main method, requested operation
  * @return int representation of operation
  */
 
-    public static int checkUserRequest(String inputToCheck)
+    public static int checkUserRequest()
     {
         ArrayList<String> posOperations;
         boolean operationListed;
-        String checkOperation, opListed;
+        String requestForOperation, checkOperation, opListed;
         int selection;
+        Scanner userOpInput;
 
         posOperations = new ArrayList<String>();
         operationListed = false;
-        checkOperation = inputToCheck;
         selection = 0;
-
+        userOpInput = new Scanner(System.in);
+        checkOperation = "";
+        requestForOperation = "Please select your requested operation by typing the choice in below. \n " +
+                "Add, Subtract, Multiply, Divide, Square Root";
         posOperations.add("add");
         posOperations.add("subtract");
         posOperations.add("multiply");
@@ -93,20 +98,24 @@ public class CalculatorApp {
 
         while (!operationListed)
         {
-            for (int i = 0; i < posOperations.size(); i++)
-            {
-                opListed = posOperations.get(i);
-                if (checkOperation.equalsIgnoreCase(opListed))
-                {
-                    selection = i + 1;
-                    operationListed = true;
-                    i = 6;
-                }
-                else
-                {
-                    System.out.println("Selection not found. Please try again.");
-                }
+            System.out.println(requestForOperation);
+            if(userOpInput.hasNextLine()) {
+                checkOperation = userOpInput.nextLine();
+                for (int i = 0; i < posOperations.size(); i++) {
+                    opListed = posOperations.get(i);
+                    if (checkOperation.equalsIgnoreCase(opListed)) {
+                        selection = i + 1;
+                        operationListed = true;
+                        i = 6;
+                    } else {
+                        System.out.println("Selection not found. Please try again.");
+                    }
 
+                }
+            }
+            else
+            {
+                System.out.println("I need more information to continue.");
             }
             System.out.println("You have chosen to " + posOperations.get(selection - 1).toString());
 
