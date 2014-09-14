@@ -20,7 +20,7 @@ public class CalculatorApp {
 
     static public void main(String[] args) {
 
-        String welcome, requestForOperation, operationEntered, yourAnswer, goAgain, goAnswer;
+        String welcome, yourAnswer, goAgain, goAnswer;
         double calcAnswer, firstNumber, secondNumber;
         int selectionHolder;
         boolean stillWorking;
@@ -38,25 +38,25 @@ public class CalculatorApp {
         System.out.println(welcome);
 
         while(stillWorking){
-            selectionHolder = CalculatorApp.checkUserRequest();
+            selectionHolder = CalculatorApp.checkUserRequest(); //call on operation input method
 
             if (selectionHolder < 5)
             {
-                firstNumber = CalculatorApp.checkUserDigits();
+                firstNumber = CalculatorApp.checkUserDigits(); //call on double check method.
                 secondNumber = CalculatorApp.checkUserDigits();
             }
             else
             {
-                firstNumber = CalculatorApp.checkUserDigits();
+                firstNumber = CalculatorApp.checkUserDigits(); //call on double check method if doing sqr
             }
 
-            calcAnswer = CalculatorApp.calculationMaster(selectionHolder, firstNumber, secondNumber);
+            calcAnswer = CalculatorApp.calculationMaster(selectionHolder, firstNumber, secondNumber); //call on calculation method
 
-            System.out.println(yourAnswer + calcAnswer);
-            System.out.println(goAgain);
+            System.out.println(yourAnswer + calcAnswer); // prints out answer
+            System.out.println(goAgain); //asks if user wants to do more calculations
             goAnswer = userInput.nextLine();
 
-            if(!goAnswer.equalsIgnoreCase("y"))
+            if(!goAnswer.equalsIgnoreCase("y")) //breaks loop only if answered y.
             {
                 stillWorking = false;
             }
@@ -95,24 +95,24 @@ public class CalculatorApp {
         posOperations.add("square root");
 
         while (!operationListed) {
-            try {
+            try { //added to catch bad user input without throwing a million exceptions
                 System.out.println(requestForOperation);
                 checkOperation = userOpInput.nextLine();
-                for (int i = 0; i < posOperations.size(); i++) {
+                for (int i = 0; i < posOperations.size(); i++) { //loops through possible options using array
                     opListed = posOperations.get(i);
                     if (checkOperation.equalsIgnoreCase(opListed)) {
                         selection = i + 1;
                         operationListed = true;
-                        i = 6;
+                        i = 6; //when found, breaks loop and stores selection
 
                     }
                 }
             }
-                        catch(InputMismatchException e){
+                        catch(InputMismatchException e){ //catch for try
                             System.out.println("Selection not found. Please try again.");
                         }
                 }
-        System.out.println("You have chosen to " + posOperations.get(selection - 1).toString());
+        System.out.println("You have chosen to " + posOperations.get(selection - 1).toString()); //print out of selection
         return selection;
 
 }
@@ -144,15 +144,15 @@ public class CalculatorApp {
             System.out.println(requestForDigits);
             if (numbersIn.hasNextDouble())
             {
-                if(numbersIn.nextDouble() > numTooBig)
+                if(numbersIn.nextDouble() > numTooBig) //checks if number is larger than max double
                 {
                     System.out.println("That's a HUGE number. Cannot process. Please try again.");
                 }
-                else if(numbersIn.nextDouble() < numTooSmall)
+                else if(numbersIn.nextDouble() < numTooSmall) //checks if number is smaller than min double
                 {
                     System.out.println("That's a TINY number. Cannot process. Please try again.");
                 }
-                else
+                else //if not too large or small and is a double, stores the number
                 {
                     numberToCompute = numbersIn.nextDouble();
                     numberOkay = true;
@@ -160,10 +160,10 @@ public class CalculatorApp {
             }
             else
             {
-                System.out.println("You did not enter a number. Please try again.");
+                System.out.println("You did not enter a number. Please try again."); //catch for not doubles
             }
         }
-        System.out.println("Number Entered: " + numberToCompute);
+        System.out.println("Number Entered: " + numberToCompute); //prints out number entered
         return numberToCompute;
     }
 
@@ -180,7 +180,7 @@ public class CalculatorApp {
         double answer;
         answer = 0;
 
-        switch(opSelection)
+        switch(opSelection) //reviews selection and completes the desired operation on numbers entered
         {
             case 1:
                 answer = firstEntry + secondEntry;
@@ -202,11 +202,11 @@ public class CalculatorApp {
                 answer = Math.sqrt(firstEntry);
                 break;
 
-            default:
+            default: //just in case
                 System.out.println("Ooops. There appears to be a computation error. Please contact someone. Anyone. Hurry!");
                 break;
         }
-        return answer;
+        return answer; //returns the answer to the main method
 
 
     }
