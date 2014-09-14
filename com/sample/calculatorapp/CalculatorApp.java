@@ -7,7 +7,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-
 /**
  * This Calculator App will take in user input and perform the requested operations.
  * The user will input the operation (addition, subtraction, multiplication, division, or square root)
@@ -18,7 +17,9 @@ import java.util.ArrayList;
 
 //Calculator Main Method. This runs the calculator program. It operates on a loop, until the user exits the program.
 public class CalculatorApp {
+
     static public void main(String[] args) {
+
         String welcome, requestForOperation, operationEntered, yourAnswer, goAgain, goAnswer;
         double calcAnswer, firstNumber, secondNumber;
         int selectionHolder;
@@ -129,12 +130,13 @@ public class CalculatorApp {
     {
         Scanner numbersIn;
         String requestForDigits;
-        double numberToCompute;
+        double numberToCompute, numTooBig, numTooSmall;
         boolean numberOkay;
-
         numberOkay = false;
         numbersIn = new Scanner(System.in);
         numberToCompute = 0;
+        numTooBig = Double.MAX_VALUE;
+        numTooSmall = Double.MIN_VALUE;
 
         requestForDigits = "Please enter digit you are calculating.";
         while (!numberOkay)
@@ -142,8 +144,19 @@ public class CalculatorApp {
             System.out.println(requestForDigits);
             if (numbersIn.hasNextDouble())
             {
-                numberToCompute = numbersIn.nextDouble();
-                numberOkay = true;
+                if(numbersIn.nextDouble() > numTooBig)
+                {
+                    System.out.println("That's a HUGE number. Cannot process. Please try again.");
+                }
+                else if(numbersIn.nextDouble() < numTooSmall)
+                {
+                    System.out.println("That's a TINY number. Cannot process. Please try again.");
+                }
+                else
+                {
+                    numberToCompute = numbersIn.nextDouble();
+                    numberOkay = true;
+                }
             }
             else
             {

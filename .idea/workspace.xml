@@ -36,8 +36,8 @@
       <file leaf-file-name="CalculatorApp.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/sample/calculatorapp/CalculatorApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65789473" vertical-offset="645" max-vertical-offset="3255">
-              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.3684211" vertical-offset="2079" max-vertical-offset="3450">
+              <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -377,7 +377,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -449,8 +449,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/sample/calculatorapp/CalculatorApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65789473" vertical-offset="645" max-vertical-offset="3255">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.3684211" vertical-offset="2079" max-vertical-offset="3450">
+          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
