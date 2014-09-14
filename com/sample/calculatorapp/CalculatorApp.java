@@ -3,6 +3,7 @@ package com.sample.calculatorapp;
 /**
  * Created by BFineRocks on 9/12/14.
  */
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -36,9 +37,7 @@ public class CalculatorApp {
         System.out.println(welcome);
 
         while(stillWorking){
-            System.out.println(requestForOperation);
-            operationEntered = userInput.nextLine();
-            selectionHolder = CalculatorApp.checkUserRequest(operationEntered);
+            selectionHolder = CalculatorApp.checkUserRequest();
 
             if (selectionHolder < 5)
             {
@@ -55,14 +54,11 @@ public class CalculatorApp {
             System.out.println(yourAnswer + calcAnswer);
             System.out.println(goAgain);
 
-            if(!userInput.nextLine().contains("y") || !userInput.nextLine().contains("Y"))
+/*            if(!userInput.nextLine().contains("y") || !userInput.nextLine().contains("Y"))
             {
                 stillWorking = false;
-            }
-            else
-            {
-                stillWorking = true;
-            }
+            }*/
+
         }
 
 
@@ -96,10 +92,9 @@ public class CalculatorApp {
         posOperations.add("divide");
         posOperations.add("square root");
 
-        while (!operationListed)
-        {
-            System.out.println(requestForOperation);
-            if(userOpInput.hasNextLine()) {
+        while (!operationListed) {
+            try {
+                System.out.println(requestForOperation);
                 checkOperation = userOpInput.nextLine();
                 for (int i = 0; i < posOperations.size(); i++) {
                     opListed = posOperations.get(i);
@@ -107,21 +102,23 @@ public class CalculatorApp {
                         selection = i + 1;
                         operationListed = true;
                         i = 6;
-                    } else {
+
+                    }
+                    else {
                         System.out.println("Selection not found. Please try again.");
                     }
-
                 }
             }
-            else
-            {
-                System.out.println("I need more information to continue.");
-            }
-            System.out.println("You have chosen to " + posOperations.get(selection - 1).toString());
-
-        }
+                        catch(InputMismatchException e){
+                            System.out.println("Selection not found. Please try again.");
+                        }
+                }
+        System.out.println("You have chosen to " + posOperations.get(selection - 1).toString());
         return selection;
-    }
+
+}
+
+
 
     /**
      * This method checks if the user entered doubles that can be calculated. It uses a Scanner and the hasNextDouble
