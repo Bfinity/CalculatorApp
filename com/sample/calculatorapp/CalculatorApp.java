@@ -19,7 +19,7 @@ import java.util.ArrayList;
 //Calculator Main Method. This runs the calculator program. It operates on a loop, until the user exits the program.
 public class CalculatorApp {
     static public void main(String[] args) {
-        String welcome, requestForOperation, operationEntered, yourAnswer, goAgain;
+        String welcome, requestForOperation, operationEntered, yourAnswer, goAgain, goAnswer;
         double calcAnswer, firstNumber, secondNumber;
         int selectionHolder;
         boolean stillWorking;
@@ -53,11 +53,12 @@ public class CalculatorApp {
 
             System.out.println(yourAnswer + calcAnswer);
             System.out.println(goAgain);
+            goAnswer = userInput.nextLine();
 
-/*            if(!userInput.nextLine().contains("y") || !userInput.nextLine().contains("Y"))
+            if(!goAnswer.equalsIgnoreCase("y"))
             {
                 stillWorking = false;
-            }*/
+            }
 
         }
 
@@ -103,9 +104,6 @@ public class CalculatorApp {
                         operationListed = true;
                         i = 6;
 
-                    }
-                    else {
-                        System.out.println("Selection not found. Please try again.");
                     }
                 }
             }
