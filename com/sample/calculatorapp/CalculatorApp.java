@@ -7,6 +7,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+
 /**
  * This Calculator App will take in user input and perform the requested operations.
  * The user will input the operation (addition, subtraction, multiplication, division, or square root)
@@ -130,7 +131,7 @@ public class CalculatorApp {
     {
         Scanner numbersIn;
         String requestForDigits;
-        double numberToCompute, numTooBig, numTooSmall;
+        double numberToCompute, numTooBig, numTooSmall, numHolder;
         boolean numberOkay;
         numberOkay = false;
         numbersIn = new Scanner(System.in);
@@ -142,21 +143,22 @@ public class CalculatorApp {
         while (!numberOkay)
         {
             System.out.println(requestForDigits);
-            if (numbersIn.hasNextDouble())
-            {
-                if(numbersIn.nextDouble() > numTooBig) //checks if number is larger than max double
+            if (numbersIn.hasNextDouble()) {
+                numHolder = numbersIn.nextDouble();
+                if(numHolder > numTooBig) //checks if number is larger than max double
                 {
                     System.out.println("That's a HUGE number. Cannot process. Please try again.");
                 }
-                else if(numbersIn.nextDouble() < numTooSmall) //checks if number is smaller than min double
+                else if(numHolder < numTooSmall) //checks if number is smaller than min double
                 {
                     System.out.println("That's a TINY number. Cannot process. Please try again.");
                 }
                 else //if not too large or small and is a double, stores the number
                 {
-                    numberToCompute = numbersIn.nextDouble();
-                    numberOkay = true;
+                numberToCompute = numHolder;
+                numberOkay = true;
                 }
+
             }
             else
             {
